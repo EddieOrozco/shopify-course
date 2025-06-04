@@ -43,9 +43,13 @@
         {%- if section.blocks.first.settings.text != blank -%}
           {% comment %} {%- if section.blocks.first.settings.link != blank -%} {% endcomment %}
             {% comment %} <a
+            href="{{ section.blocks.first.settings.link }}"
+            class="announcement-bar__link link link--text focus-inset animate-arrow"
+            style="color: {{ section.settings.announcement_text_color }};">  {% endcomment %}
+             <a
               href="{{ section.blocks.first.settings.link }}"
-              class="announcement-bar__link link link--text focus-inset animate-arrow"
-            > {% endcomment %}
+              style="color: {{ section.settings.announcement_text_color }}; text-decoration: none;" 
+            > 
           {% comment %} {%- endif -%} {% endcomment %}
           {% comment %} <p class="announcement-bar__message h5"> {% endcomment %}
             <span>{{ section.blocks.first.settings.text | escape }}</span>
@@ -53,9 +57,9 @@
               {{- 'icon-arrow.svg' | inline_asset_content -}}
             {%- endif -%} {% endcomment %}
           {% comment %} </p> {% endcomment %}
-          {% comment %} {%- if section.blocks.first.settings.link != blank -%}
+          {% comment %} {%- if section.blocks.first.settings.link != blank -%}{% endcomment %}
             </a>
-          {%- endif -%} {% endcomment %}
+          {% comment %} {%- endif -%} {% endcomment %}
         {%- endif -%}
         
       </div>
