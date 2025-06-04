@@ -29,7 +29,7 @@
     {%- if section.blocks.size == 1 -%}
 
       <div class="announce-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}" 
-      style="background: {{ section.settings.background_color }};" 
+      style="background: {{ section.settings.background_color }}; color: {{ section.settings.announcement_text_color }};" 
       role="region" 
       aria-label="{{ 'sections.header.announcement' | t }}" 
       {{ section.blocks.first.shopify_attributes }} >
@@ -112,7 +112,7 @@
                       >
                     {%- endif -%}
                     <p class="announcement-bar__message h5">
-                      <span style="color: {{ section.settings.announcement_text_color }};">{{ block.settings.text | escape }}</span>
+                      <span>{{ block.settings.text | escape }}</span>
                       {%- if block.settings.link != blank -%}
                         {{- 'icon-arrow.svg' | inline_asset_content -}}
                       {%- endif -%}
